@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Наиль и Элина — приглашение на свадьбу</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Marck+Script&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#5E0005;--red:#8B2229;--ink:#111;--paper:#fff;--serif:"Playfair Display",Georgia,serif;--script:"Marck Script","Playfair Display",cursive;--mono:"JetBrains Mono",ui-monospace,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--wine);font-family:var(--serif);font-size:18px;line-height:1.6;overflow-x:hidden}
+.wrap{max-width:520px;margin:0 auto;padding:0 28px}
+.fade-in{height:140px;background:linear-gradient(var(--from),var(--to))}
+.hero{background:var(--wine);color:#fff;padding:72px 0 0}
+.hero h1{font-weight:400;font-size:clamp(64px,19vw,104px);line-height:.95;margin:0}
+.hero h1 span{display:block}.hero h1 i{font-size:.4em;margin-left:.3em;vertical-align:.5em}
+.hero h1 .b{text-align:right;padding-right:6%}
+.date{text-align:right;margin:24px 0 36px;font-size:20px;letter-spacing:.04em}
+.quote{background:#fff;color:var(--ink);text-align:right;padding:40px 28px 8px;margin:0}
+.quote p{margin:0 0 0 auto;max-width:300px}
+.count{background:#fff;padding:24px 0 40px}
+.count h3{font:400 30px var(--script);text-align:center;margin:0 0 16px}
+.cells{display:flex;gap:8px}.cells div{flex:1;text-align:center;border-top:1px solid var(--wine);padding-top:10px}
+.cells strong{display:block;font-weight:400;font-size:clamp(30px,9vw,46px);line-height:1}.cells span{font-size:14px}
+.love{background:#fff;text-align:center;font-weight:500;color:var(--red);font-size:clamp(150px,52vw,270px);line-height:.82;letter-spacing:-.02em;padding:24px 0 40px}
+.love span{display:block}
+.hi{background:#fff;font-family:var(--mono);color:var(--ink);font-weight:300;font-size:16px;padding-bottom:64px}
+.hi h2{font:400 clamp(24px,7vw,32px)/1.3 var(--mono);text-align:center;margin:0 0 28px}
+.hi p{margin:0 0 20px;max-width:30ch}
+.cal{background:#000;color:#fff;padding:56px 0 64px;text-align:center}
+.cal h2{font-weight:400;font-size:clamp(46px,14vw,72px);letter-spacing:.02em;margin:0 0 28px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);row-gap:22px;font-size:clamp(18px,5vw,24px)}
+.days .d{position:relative}.days .on{color:#fff;font-weight:500}
+.days .on b{position:relative;z-index:1;font-weight:500;color:#fff}
+.days .hrt{position:absolute;left:50%;top:50%;width:2.6em;transform:translate(-50%,-46%);color:#D32A36;z-index:0}
+.prog{background:#fff;padding:48px 0 72px}
+.prog h2{font:400 clamp(40px,12vw,56px) var(--script);text-align:center;margin:0 0 28px}
+.prog div.r{display:grid;grid-template-columns:110px 1px 1fr;gap:20px;align-items:center;padding:14px 0;font-size:clamp(19px,5.5vw,26px)}
+.prog i{height:56px;background:var(--wine)}
+.loc{background:var(--wine);color:#fff;text-align:center;padding:48px 0 0}
+.loc small{display:block;text-align:right;font-size:18px}
+.loc h2{font-weight:400;font-size:clamp(64px,19vw,112px);line-height:.95;margin:0 0 44px;letter-spacing:.01em}
+.loc p{margin:0;padding-bottom:40px}
+.ph{display:block;width:100%;height:auto}
+.wish{background:#fff;text-align:center;padding:24px 0 56px}
+.wish h2{font:400 clamp(40px,12vw,56px) var(--script);margin:0 0 20px}
+.fin{background:var(--wine);text-align:center;color:#fff;padding-bottom:56px}
+.fin h2{font-weight:400;font-size:clamp(30px,9vw,42px);margin:32px 0 16px}
+.btn{display:inline-block;margin:6px;padding:14px 28px;border:1px solid #fff;color:#fff;text-decoration:none;border-radius:999px;font-size:17px}
+.btn.f{background:#fff;color:var(--wine)}.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.rsvp{text-align:left;max-width:420px;margin:0 auto 20px}
+.fl{display:block;font-size:16px;margin:0 0 8px;padding:0}
+.rsvp input[type=text]{width:100%;font:inherit;font-size:19px;color:#fff;background:transparent;border:0;border-bottom:1px solid #fff;padding:8px 0;margin-bottom:28px;border-radius:0}
+.rsvp input::placeholder{color:rgba(255,255,255,.55)}
+.rsvp input[type=text]:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.rsvp fieldset{border:0;padding:0;margin:0 0 24px}
+.pill{display:block;margin-bottom:10px;cursor:pointer}
+.pill input{position:absolute;opacity:0}
+.pill span{display:block;border:1px solid #fff;border-radius:999px;padding:12px 20px;font-size:18px}
+.pill input:checked+span{background:#fff;color:var(--wine)}
+.pill input:focus-visible+span{outline:3px solid #fff;outline-offset:3px}
+.rsvp button{cursor:pointer;font:inherit;font-size:18px}
+.sent{margin:20px 0 0;font-size:16px;white-space:pre-line}
+.rsvpsec{background:#fff;color:var(--wine);padding:16px 0 80px}
+.rsvpsec h2{font:400 clamp(40px,12vw,56px) var(--script);text-align:center;margin:0 0 28px}
+.rsvpsec input[type=text]{color:var(--wine);border-bottom-color:var(--wine)}
+.rsvpsec input::placeholder{color:rgba(94,0,5,.5)}
+.rsvpsec input[type=text]:focus-visible{outline-color:var(--wine)}
+.rsvpsec .pill span{border-color:var(--wine)}
+.rsvpsec .pill input:checked+span{background:var(--wine);color:#fff}
+.rsvpsec .pill input:focus-visible+span{outline-color:var(--wine)}
+.rsvpsec .btn.f,.rsvpsec .btn.f:focus-visible{background:var(--wine);color:#fff;border-color:var(--wine)}
+.rsvpsec .btn.f:hover{background:var(--red);border-color:var(--red)}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<h1><span>Nail <i>&amp;</i></span><span class="b">Elina</span></h1>
+<p class="date">30.01.2027</p></div></header>
+<p class="quote"><span class="wrap" style="display:block"><span style="display:block;margin-left:auto;max-width:300px">Не существует шести или семи чудес в мире. Есть только одно: это любовь.</span></span></p>
+<section class="count"><div class="wrap"><h3 id="cl">До свадьбы осталось</h3>
+<div class="cells"><div><strong id="d">0</strong><span>дней</span></div><div><strong id="h">0</strong><span>часов</span></div><div><strong id="m">0</strong><span>минут</span></div><div><strong id="s">0</strong><span>секунд</span></div></div></div></section>
+<div class="love" aria-hidden="true"><span>LO</span><span>VE</span></div>
+<section class="hi"><div class="wrap"><h2>Дорогие<br>родные и близкие!</h2>
+<p>Мы давно ждали момента, когда сможем разделить с вами самый важный и счастливый день в нашей жизни.</p>
+<p>Совсем скоро состоится наша свадьба! Мы рады пригласить вас стать свидетелями этого торжества и разделить с нами самые яркие моменты!</p></div></section>
+<section class="cal"><div class="wrap"><h2>ЯНВАРЬ</h2>
+<div class="days"><span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>
+<span class="d">25</span><span class="d">26</span><span class="d">27</span><span class="d">28</span><span class="d">29</span><span class="d on"><svg class="hrt" viewBox="0 0 32 29" aria-hidden="true"><path fill="currentColor" d="M16 29C4 20 0 14 0 8.5 0 3.5 4 0 8.5 0c3 0 6 1.800 7.500 4.500C17.500 1.800 20.500 0 23.500 0 28 0 32 3.500 32 8.500 32 14 28 20 16 29z"/></svg><b>30</b></span><span class="d">31</span></div></div></section>
+<section class="prog"><div class="wrap"><h2>Программа</h2>
+<div class="r"><span>16:00</span><i></i><span>сбор гостей</span></div>
+<div class="r"><span>17:00</span><i></i><span>начало банкета</span></div></div></section>
+<section class="rsvpsec"><div class="wrap"><h2>Анкета гостя</h2>
+<form id="rsvp" class="rsvp" autocomplete="off">
+<label class="fl" for="nm">Имя и фамилия</label>
+<input id="nm" name="nm" type="text" required placeholder="Например, Иван Петров">
+<fieldset><legend class="fl">Сможете ли присутствовать?</legend>
+<label class="pill"><input type="radio" name="an" value="Конечно буду" required><span>Конечно буду</span></label>
+<label class="pill"><input type="radio" name="an" value="К сожалению, не получится"><span>К сожалению, не получится</span></label></fieldset>
+<button class="btn f" type="submit">Отправить ответ</button>
+<p id="sent" class="sent" hidden></p>
+</form>
+</div></section>
+<section class="loc"><div class="wrap"><small>[ МЕСТО ]</small><h2>LOCA<br>TION</h2>
+<p>Астрахань, Астраханская область,<br>село Началово,<br>ул. Мелиоративная, 23</p></div>
+<img class="ph" alt="Вишня и обручальные кольца на сливочном креме" src="cherries.jpg"></section>
+<section class="wish"><div class="wrap"><h2>Пожелания</h2>
+<p>Мы очень ценим Вашу заботу, внимание и будем рады любому подарку! И не важно, в какой конверт Вы его упакуете :)</p></div></section>
+<section class="fin"><img class="ph" alt="Два бокала на фоне красного занавеса" src="curtain.jpg">
+<div class="wrap"><a class="btn" href="https://yandex.ru/maps/?text=Астраханская%20область%20Началово%20Мелиоративная%2023" target="_blank" rel="noopener">Маршрут</a></div></section>
+<script>
+// Дата и время свадьбы: год, месяц (с 0), день, час, минуты
+var target=new Date(2027,0,30,17,0).getTime();
+function tick(){
+  var past=Date.now()>=target, s=Math.floor(Math.abs(target-Date.now())/1000);
+  document.getElementById("cl").textContent=past?"С нашей свадьбы прошло":"До свадьбы осталось";
+  document.getElementById("d").textContent=Math.floor(s/86400);
+  document.getElementById("h").textContent=Math.floor(s%86400/3600);
+  document.getElementById("m").textContent=Math.floor(s%3600/60);
+  document.getElementById("s").textContent=s%60;
+}
+tick();setInterval(tick,1000);
+var RSVP_EMAIL="hello@example.com"; // почта, куда придут ответы гостей
+document.getElementById("rsvp").addEventListener("submit",function(e){
+  e.preventDefault();
+  var nm=document.getElementById("nm").value.trim();
+  var an=document.querySelector('input[name="an"]:checked').value;
+  var text="Имя и фамилия: "+nm+"\nОтвет: "+an;
+  var p=document.getElementById("sent");
+  p.hidden=false;
+  p.textContent="Спасибо, "+nm+"! Откроется письмо с вашим ответом, нажмите «Отправить». Если письмо не открылось, перешлите нам это сообщение вручную:\n\n"+text;
+  window.location.href="mailto:"+RSVP_EMAIL+"?subject="+encodeURIComponent("Ответ на приглашение: "+nm)+"&body="+encodeURIComponent(text);
+});
+
+</script></body></html>
